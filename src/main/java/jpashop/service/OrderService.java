@@ -55,7 +55,7 @@ public class OrderService {
         order.cancle();
     }
 
-    //검색
+    //검색가
     public Order findOrder(Long orderId) {
         return orderRepository.findOne(orderId);
     }
