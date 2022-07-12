@@ -8,12 +8,14 @@ import jpashop.domain.item.Item;
 import jpashop.repository.ItemRepository;
 import jpashop.repository.MemberRepository;
 import jpashop.repository.OrderRepository;
+import jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.awt.*;
 import java.lang.management.LockInfo;
+import java.util.List;
 import java.util.function.LongFunction;
 
 @Service
@@ -58,5 +60,9 @@ public class OrderService {
     //검색가
     public Order findOrder(Long orderId) {
         return orderRepository.findOne(orderId);
+    }
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
     }
 }
