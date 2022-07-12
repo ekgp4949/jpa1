@@ -1,9 +1,9 @@
 package jpashop.controller;
 
 import lombok.Getter;
-import org.springframework.stereotype.Service;
+import lombok.Setter;
 
-@Getter @Service
+@Getter @Setter
 public class BookForm {
 
     private Long id;
